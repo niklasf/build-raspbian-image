@@ -29,6 +29,11 @@ Usage
 Run `./bootstrap.sh` (probably root required for loopback device management)
 to create a fresh raspbian-yyyy-mm-dd.img in the current directory.
 
+Writing the image to an SD card
+-------------------------------
+
+`dd if=raspbian-yyyy-mm-dd.img of=/dev/mmcblk0 bs=1M && sync`
+
 Recommended packages
 --------------------
 
@@ -62,9 +67,28 @@ Recommended packages
 Resize the root partition to the SD card
 ----------------------------------------
 
- 1. Login. `fdisk /dev/mmcblk0p1`. Delete the partition. Create a new primary
-    ext4 parition.
+The default image is effectly about 200MB but actually comes with a 2GB root
+parition. Its likely the the SD card is much bigger.
+
+ 1. Boot. Login. `fdisk /dev/mmcblk0p1`. Delete the partition.
+    Create a new primary ext4 parition.
 
  2. Reboot.
 
  3. Login. `resize2fs /dev/mmcblk0p1`.
+
+Add a swapfile
+--------------
+
+ 1. Allocate a continuous file:
+
+    `dd if=/dev/zero of=/var/swapfile bs=1M count=512`
+
+ 2. Create a swap file in there: `mkswap /var/swapfile`
+
+ 3. Append the following line to `/etc/fstab` to activate it on future boots:
+
+    `/var/swapfile none swap sw 0 0`
+
+ 4. `swapon /var/swapfile` to activate it right now. `swapon -s` to show
+     statistics.
