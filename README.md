@@ -40,7 +40,10 @@ Recommended packages
 --------------------
 
  * `ntp` to automatically synchronize the clock over the network. Works without
-   any configuration.
+   any configuration. Also `dpkg-reconfigure tz-data` to select a time zone.
+
+ * `locales`. Also `dpkg-reconfigure locales` and select at least one UTF-8
+   locale to generate.
 
  * `iptables` for firewall configuration. Sample `/etc/network/iptables`:
 
