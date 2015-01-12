@@ -21,6 +21,7 @@ chroot $ROOTDIR apt-get update
 chroot $ROOTDIR apt-get install -y openssh-server
 cp etc/rc.local $ROOTDIR/etc/rc.local
 chmod a+x $ROOTDIR/etc/rc.local
+rm -f $ROOTDIR/etc/ssh/ssh_host_*
 chroot $ROOTDIR update-rc.d rc.local defaults
 
 # Configure.
@@ -28,6 +29,7 @@ cp boot/cmdline.txt $ROOTDIR/boot/cmdline.txt
 cp boot/config.txt $ROOTDIR/boot/config.txt
 cp etc/fstab $ROOTDIR/etc/fstab
 cp etc/modules $ROOTDIR/etc/modules
+cp etc/ssh/sshd_config $ROOTDIR/etc/ssh/sshd_config
 
 # Install kernel.
 mkdir -p $ROOTDIR/lib/modules
