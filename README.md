@@ -82,8 +82,10 @@ parition. Its likely the the SD card is much bigger.
 
  3. Login. `resize2fs /dev/mmcblk0p1`.
 
-Add a swapfile
---------------
+Optimize for heavy RAM usage
+----------------------------
+
+### Add a swapfile
 
  1. Allocate a continuous file:
 
@@ -97,3 +99,15 @@ Add a swapfile
 
  4. `swapon /var/swapfile` to activate it right now. `swapon -s` to show
      statistics.
+
+### Relinquish ramdisks
+
+Remove `tmpfs /tmp tmpfs defaults,size=100M 0 0` from `/etc/fstab`. It makes
+no sense to have a ramdisk only to swap it to disk anyway.
+
+Optimize for SD card life
+-------------------------
+
+Make sure you limit writes to your SD card. `/tmp` is already mounted as
+tmpfs (see `/etc/fstab`). If you do not need logs across reboots you could also
+mount `/var/log` as tmpfs.
