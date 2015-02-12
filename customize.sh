@@ -30,6 +30,7 @@ cp boot/config.txt $ROOTDIR/boot/config.txt
 cp etc/fstab $ROOTDIR/etc/fstab
 cp etc/modules $ROOTDIR/etc/modules
 cp etc/ssh/sshd_config $ROOTDIR/etc/ssh/sshd_config
+cp etc/network/interfaces $ROOTDIR/etc/network/interfaces
 
 # Install kernel.
 mkdir -p $ROOTDIR/lib/modules
