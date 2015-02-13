@@ -39,6 +39,8 @@ Writing the image to an SD card
 Recommended packages
 --------------------
 
+ * `console-common` to select a keyboard layout.
+
  * `ntp` to automatically synchronize the clock over the network. Works without
    any configuration. Also `dpkg-reconfigure tz-data` to select a time zone.
 
