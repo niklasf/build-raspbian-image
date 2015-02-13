@@ -46,8 +46,8 @@ Recommended packages
    and expiration dates of SSL certificates.  Also `dpkg-reconfigure tzdata`
    to select a time zone.
 
- * `locales`. Also `dpkg-reconfigure locales` and select at least one UTF-8
-   locale to generate.
+ * Install `locales`. Also `dpkg-reconfigure locales` and select at least one
+   UTF-8 locale to generate.
 
  * Install `iptables` for firewall configuration. Sample
    `/etc/network/iptables`:
