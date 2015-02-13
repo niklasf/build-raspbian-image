@@ -43,7 +43,7 @@ Recommended packages
 
  * Install `ntp` to automatically synchronize the clock over the network.
    Without a synchronized clock there may be problems when checking validity
-   and expiration dates of SSL certificates.  Also `dpkg-reconfigure tz-data`
+   and expiration dates of SSL certificates.  Also `dpkg-reconfigure tzdata`
    to select a time zone.
 
  * `locales`. Also `dpkg-reconfigure locales` and select at least one UTF-8
