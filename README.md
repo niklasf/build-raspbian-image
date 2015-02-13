@@ -39,15 +39,18 @@ Writing the image to an SD card
 Recommended packages
 --------------------
 
- * `console-common` to select a keyboard layout.
+ * Install `console-common` to select a keyboard layout.
 
- * `ntp` to automatically synchronize the clock over the network. Works without
-   any configuration. Also `dpkg-reconfigure tz-data` to select a time zone.
+ * Install `ntp` to automatically synchronize the clock over the network.
+   Without a synchronized clock there may be problems when checking validity
+   and expiration dates of SSL certificates.  Also `dpkg-reconfigure tz-data`
+   to select a time zone.
 
  * `locales`. Also `dpkg-reconfigure locales` and select at least one UTF-8
    locale to generate.
 
- * `iptables` for firewall configuration. Sample `/etc/network/iptables`:
+ * Install `iptables` for firewall configuration. Sample
+   `/etc/network/iptables`:
 
    ```
    *filter
@@ -67,9 +70,9 @@ Recommended packages
  * `fail2ban` to ban IPs trying too many wrong SSH passwords for some time.
    Works without any configuration.
 
- * `apt-cron` to automatically look for package updates. Regularly updates
-   the package lists (but does not install anything) if installed without
-   any reconfiguration.
+ * Install `apt-cron` to automatically look for package updates. Regularly
+   updates the package lists (but does not install anything) if installed
+   without any reconfiguration.
 
 Resize the root partition to the SD card
 ----------------------------------------
