@@ -44,7 +44,7 @@ chmod a+x $ROOTDIR/usr/local/sbin/rpi-update
 SKIP_BACKUP=1 ROOT_PATH=$ROOTDIR BOOT_PATH=$ROOTDIR/boot $ROOTDIR/usr/local/sbin/rpi-update
 
 # Install extra packages.
-chroot $ROOTDIR apt-get install -y vim-tiny netbase less iputils-ping net-tools
+chroot $ROOTDIR apt-get install -y vim netbase less iputils-ping net-tools
 chroot $ROOTDIR apt-get install -y anacron fake-hwclock
 
 # Install other recommended packages.
