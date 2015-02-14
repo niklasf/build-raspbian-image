@@ -7,8 +7,8 @@ Password: `raspberry`
 
 Only a basic Debian with standard networking utilities.
 
-**:exclamation: Careful: As an exception openssh-server is pre-installed and will allow
-root login with the default password.** Host keys are regenerated on
+**:exclamation: Careful: As an exception openssh-server is pre-installed and
+will allow root login with the default password.** Host keys are generated on
 first boot.
 
 Download
