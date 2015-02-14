@@ -2,7 +2,7 @@ build-raspbian-image
 ====================
 Builds a minimal [Raspbian](http://raspbian.org/) Jessie image.
 
-Login: `root`
+Login: `root`  
 Password: `raspberry`
 
 Only a basic Debian with standard networking utilities.
@@ -13,12 +13,9 @@ first boot.
 
 Download
 --------
-Latest download: [raspbian-20150214.img.zip](https://www.dropbox.com/s/hunl4libi6hdy14/raspbian-20150214.img.zip?dl=1)
-
-SHA1: `ad16b80dd8b59eb64d069dda2fdfeb01175e2c74`
-
-SHA256: `3067de2bcd29536aaa72a1925febab62490fc973d982f936a3d0b82365658fa5`
-
+Latest download: [raspbian-20150214.img.zip](https://www.dropbox.com/s/hunl4libi6hdy14/raspbian-20150214.img.zip?dl=1)  
+SHA1: `ad16b80dd8b59eb64d069dda2fdfeb01175e2c74`  
+SHA256: `3067de2bcd29536aaa72a1925febab62490fc973d982f936a3d0b82365658fa5`  
 GPG Signature: [raspbian-20150214.img.zip.asc](/raspbian-20150214.img.zip.asc)
 
 Dependencies
