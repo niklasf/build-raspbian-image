@@ -3,7 +3,7 @@
 /home/niklas/Projekte/vmdebootstrap/vmdebootstrap \
     --arch armhf \
     --variant minbase \
-    --distribution jessie \
+    --distribution stretch \
     --mirror http://[::1]:3142/archive.raspbian.org/raspbian \
     --image `date +raspbian-%Y%m%d.img` \
     --keyring `pwd`/raspbian.org.gpg \
