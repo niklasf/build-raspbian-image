@@ -1,6 +1,6 @@
 build-raspbian-image
 ====================
-Builds a minimal [Raspbian](http://raspbian.org/) Jessie image.
+Builds a minimal [Raspbian](http://raspbian.org/) Stretch image.
 
 Login: `root`  
 Password: `raspberry`
