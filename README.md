@@ -77,6 +77,8 @@ Recommended packages
  * `fail2ban` to ban IPs trying too many wrong SSH passwords for some time.
    Works without any configuration.
 
+ * `needrestart`, telling you which services to restart after package upgrades.
+
  * Install `apt-cron` to automatically look for package updates. Regularly
    updates the package lists (but does not install anything) if installed
    without any reconfiguration.

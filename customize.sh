@@ -48,7 +48,7 @@ chroot $ROOTDIR apt-get install -y apt-utils vim nano whiptail netbase less iput
 chroot $ROOTDIR apt-get install -y anacron fake-hwclock
 
 # Install other recommended packages.
-#apt-get install ntp apt-cron fail2ban
+#apt-get install ntp apt-cron fail2ban needrestart
 
 # Create a swapfile.
 #dd if=/dev/zero of=$ROOTDIR/var/swapfile bs=1M count=512
