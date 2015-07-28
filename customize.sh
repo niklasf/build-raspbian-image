@@ -24,10 +24,6 @@ chmod a+x $ROOTDIR/etc/rc.local
 rm -f $ROOTDIR/etc/ssh/ssh_host_*
 chroot $ROOTDIR update-rc.d rc.local defaults
 
-# Do not bind eth0 to the first MAC it ever sees.
-#sed -i -e 's/KERNEL\!=\"eth\*|/KERNEL\!=\"/' /lib/udev/rules.d/75-persistent-net-generator.rules
-#rm -f /etc/udev/rules.d/70-persistent-net.rules
-
 # Configure.
 cp boot/cmdline.txt $ROOTDIR/boot/cmdline.txt
 cp boot/config.txt $ROOTDIR/boot/config.txt
