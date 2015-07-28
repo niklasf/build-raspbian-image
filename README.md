@@ -65,7 +65,8 @@ Recommended packages
    :FORWARD ACCEPT [0:0]
    :OUTPUT ACCEPT [1161:105847]
    -A INPUT -i lo -j ACCEPT
-   -A INPUT -i eth0 -p tcp -m tcp --dport 22 -j ACCEPT
+   -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+   -A INPUT -p udp -m udp --dport 5353 -j ACCEPT
    -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
    -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
    COMMIT
@@ -82,6 +83,9 @@ Recommended packages
  * Install `apt-cron` to automatically look for package updates. Regularly
    updates the package lists (but does not install anything) if installed
    without any reconfiguration.
+
+ * Install `avahi-daemon` to broadcast the device address to the local network
+   using Zeroconf / Bonjour.
 
 Resize the root partition to the SD card
 ----------------------------------------
