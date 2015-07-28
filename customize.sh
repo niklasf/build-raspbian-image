@@ -41,7 +41,7 @@ mkdir -p $ROOTDIR/lib/modules
 chroot $ROOTDIR apt-get install -y ca-certificates curl binutils git-core kmod
 wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O $ROOTDIR/usr/local/sbin/rpi-update
 chmod a+x $ROOTDIR/usr/local/sbin/rpi-update
-SKIP_BACKUP=1 ROOT_PATH=$ROOTDIR BOOT_PATH=$ROOTDIR/boot $ROOTDIR/usr/local/sbin/rpi-update
+SKIP_WARNING=1 SKIP_BACKUP=1 ROOT_PATH=$ROOTDIR BOOT_PATH=$ROOTDIR/boot $ROOTDIR/usr/local/sbin/rpi-update
 
 # Install extra packages.
 chroot $ROOTDIR apt-get install -y apt-utils vim nano whiptail netbase less iputils-ping net-tools
