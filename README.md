@@ -11,9 +11,15 @@ Only a basic Debian with standard networking utilities.
 will allow root login with the default password.** Host keys are generated on
 first boot.
 
-Download
---------
-Latest download: [raspbian-20150214.img.zip](https://www.dropbox.com/s/hunl4libi6hdy14/raspbian-20150214.img.zip?dl=1)  
+Downloads
+---------
+
+Latest download (Raspbian Stretch): [raspbian-20150729.img.zip](https://www.dropbox.com/s/dejepys2h9u5j55/raspbian-20150729.img.zip?dl=1) (263MB)  
+SHA1: `481a39566af76d942f7a24fc48cb9d5361e0d524`  
+SHA256: `425452d0edaae4f4e21177295bae01d1300b530d00b7278d2b7a947fb27bb1ab`  
+GPG Signature: [raspbian-20150729.img.zip.asc](/raspbian-20150729.img.zip.asc)
+
+Raspbian Jessie: [raspbian-20150214.img.zip](https://www.dropbox.com/s/hunl4libi6hdy14/raspbian-20150214.img.zip?dl=1) (214MB)  
 SHA1: `ad16b80dd8b59eb64d069dda2fdfeb01175e2c74`  
 SHA256: `3067de2bcd29536aaa72a1925febab62490fc973d982f936a3d0b82365658fa5`  
 GPG Signature: [raspbian-20150214.img.zip.asc](/raspbian-20150214.img.zip.asc)
