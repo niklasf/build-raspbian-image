@@ -30,8 +30,7 @@ Dependencies
  * `apt-get install apt-cacher-ng` or change mirror URLs in `bootstrap.sh`
     and `customize.sh`.
 
- * `apt-get install vmdebootstrap` and install the patch to support the
-   raspbian keyring ([Debian bug #770722](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=770722)).
+ * `apt-get install vmdebootstrap` (at least `0.11` required)
 
  * `apt-get install binfmt-support qemu-user-static`.
 
