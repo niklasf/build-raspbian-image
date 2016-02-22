@@ -11,3 +11,5 @@ cd python-cliapp
 python setup.py install
 cd ../vmdebootstrap
 python setup.py install
+
+echo ready for bootstrap.sh
