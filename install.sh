@@ -10,3 +10,4 @@ git clone git://git.liw.fi/cliapp python-cliapp
 cd python-cliapp
 python setup.py install
 cd ../vmdebootstrap
+python setup.py install
