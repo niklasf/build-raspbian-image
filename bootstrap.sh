@@ -9,7 +9,6 @@ vmdebootstrap \
     --bootsize 64M \
     --boottype vfat \
     --root-password raspberry \
-    --enable-dhcp \
     --verbose \
     --no-kernel \
     --no-extlinux \
