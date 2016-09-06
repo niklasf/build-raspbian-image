@@ -85,7 +85,7 @@ Recommended packages
 
  * `needrestart`, telling you which services to restart after package upgrades.
 
- * Install `apt-cron` to automatically look for package updates. Regularly
+ * Install `cron-apt` to automatically look for package updates. Regularly
    updates the package lists (but does not install anything) if installed
    without any reconfiguration.
 
