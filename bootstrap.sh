@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+SOURCEDIR=$(dirname $0)
 
 vmdebootstrap \
     --arch armhf \
@@ -14,5 +16,5 @@ vmdebootstrap \
     --no-extlinux \
     --hostname raspberry \
     --foreign /usr/bin/qemu-arm-static \
-    --debootstrapopts="variant=minbase keyring=`pwd`/raspbian.org.gpg" \
-    --customize `pwd`/customize.sh
+    --debootstrapopts="keyring=$SOURCEDIR/raspbian.org.gpg" \
+    --customize "$SOURCEDIR/customize.sh"

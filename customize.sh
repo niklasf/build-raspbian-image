@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
+SOURCEDIR=$(dirname $0)
 ROOTDIR="$1"
 
 # Do not start services during installation.
@@ -9,12 +10,12 @@ chmod +x $ROOTDIR/usr/sbin/policy-rc.d
 
 # Configure apt.
 export DEBIAN_FRONTEND=noninteractive
-cat raspbian.org.gpg | chroot $ROOTDIR apt-key add -
+cat $SOURCEDIR/raspbian.org.gpg | chroot $ROOTDIR apt-key add -
 mkdir -p $ROOTDIR/etc/apt/sources.list.d/
 mkdir -p $ROOTDIR/etc/apt/apt.conf.d/
 echo "Acquire::http { Proxy \"http://[::1]:3142\"; };" > $ROOTDIR/etc/apt/apt.conf.d/50apt-cacher-ng
-cp etc/apt/sources.list $ROOTDIR/etc/apt/sources.list
-cp etc/apt/apt.conf.d/50raspi $ROOTDIR/etc/apt/apt.conf.d/50raspi
+cp $SOURCEDIR/etc/apt/sources.list $ROOTDIR/etc/apt/sources.list
+cp $SOURCEDIR/etc/apt/apt.conf.d/50raspi $ROOTDIR/etc/apt/apt.conf.d/50raspi
 chroot $ROOTDIR apt-get update
 
 # Regenerate SSH host keys on first boot.
@@ -25,12 +26,12 @@ rm -f $ROOTDIR/etc/ssh/ssh_host_*
 chroot $ROOTDIR update-rc.d rc.local defaults
 
 # Configure.
-cp boot/cmdline.txt $ROOTDIR/boot/cmdline.txt
-cp boot/config.txt $ROOTDIR/boot/config.txt
-cp etc/fstab $ROOTDIR/etc/fstab
-cp etc/modules $ROOTDIR/etc/modules
-cp etc/ssh/sshd_config $ROOTDIR/etc/ssh/sshd_config
-cp etc/network/interfaces $ROOTDIR/etc/network/interfaces
+cp $SOURCEDIR/boot/cmdline.txt $ROOTDIR/boot/cmdline.txt
+cp $SOURCEDIR/boot/config.txt $ROOTDIR/boot/config.txt
+cp $SOURCEDIR/etc/fstab $ROOTDIR/etc/fstab
+cp $SOURCEDIR/etc/modules $ROOTDIR/etc/modules
+cp $SOURCEDIR/etc/ssh/sshd_config $ROOTDIR/etc/ssh/sshd_config
+cp $SOURCEDIR/etc/network/interfaces $ROOTDIR/etc/network/interfaces
 
 # Install kernel.
 mkdir -p $ROOTDIR/lib/modules
