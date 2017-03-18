@@ -5,7 +5,7 @@ SOURCEDIR=$(dirname $0)
 vmdebootstrap \
     --arch armhf \
     --distribution stretch \
-    --mirror http://[::1]:3142/archive.raspbian.org/raspbian \
+    --mirror http://localhost:3142/archive.raspbian.org/raspbian \
     --image `date +raspbian-%Y%m%d.img` \
     --size 2000M \
     --bootsize 64M \

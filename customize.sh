@@ -13,7 +13,7 @@ export DEBIAN_FRONTEND=noninteractive
 cat $SOURCEDIR/raspbian.org.gpg | chroot $ROOTDIR apt-key add -
 mkdir -p $ROOTDIR/etc/apt/sources.list.d/
 mkdir -p $ROOTDIR/etc/apt/apt.conf.d/
-echo "Acquire::http { Proxy \"http://[::1]:3142\"; };" > $ROOTDIR/etc/apt/apt.conf.d/50apt-cacher-ng
+echo "Acquire::http { Proxy \"http://localhost:3142\"; };" > $ROOTDIR/etc/apt/apt.conf.d/50apt-cacher-ng
 cp $SOURCEDIR/etc/apt/sources.list $ROOTDIR/etc/apt/sources.list
 cp $SOURCEDIR/etc/apt/apt.conf.d/50raspi $ROOTDIR/etc/apt/apt.conf.d/50raspi
 chroot $ROOTDIR apt-get update
