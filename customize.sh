@@ -32,7 +32,16 @@ cp -r $SOURCEDIR/etc/default $ROOTDIR/etc/default
 cp $SOURCEDIR/etc/fstab $ROOTDIR/etc/fstab
 cp $SOURCEDIR/etc/modules $ROOTDIR/etc/modules
 cp $SOURCEDIR/etc/network/interfaces $ROOTDIR/etc/network/interfaces
-sed -i "s/.*PermitRootLogin.*/PermitRootLogin yes/" $ROOTDIR/etc/ssh/sshd_config
+
+FILE="$SOURCEDIR/config/authorized_keys"
+if [ -f $FILE ]; then
+    echo "Adding authorized_keys."
+    mkdir -p $ROOTDIR/root/.ssh/
+    cp $FILE $ROOTDIR/root/.ssh/
+else
+    echo "No authorized_keys, allowing root login with password on SSH."
+    sed -i "s/.*PermitRootLogin.*/PermitRootLogin yes/" $ROOTDIR/etc/ssh/sshd_config
+fi
 
 # Install kernel.
 mkdir -p $ROOTDIR/lib/modules
