@@ -43,6 +43,15 @@ Usage
 Run `./bootstrap.sh` (probably root required for loopback device management)
 to create a fresh raspbian-yyyy-mm-dd.img in the current directory.
 
+Forbid root login
+-----------------
+
+If you boot your Raspberry Pi in a non-trusted environment, you may want
+to disable login with the default (`raspberry`) password.
+To disable passworded root login, add a file named `authorized_keys` in
+the `config/` folder, which will be copied to `/root/.ssh/`, and will
+disable root's password.
+
 Writing the image to an SD card
 -------------------------------
 
